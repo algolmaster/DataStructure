@@ -4,37 +4,36 @@
 using namespace std;
 
 int main() {
-	int n; //Å×½ºÆ® ÄÉÀÌ½º
+	int n; //í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤
 	cin >> n;
 
 	int len = 0;
 	string str;
 	
-	int** board = new int*[n]; //¼ø¼­
+	int** board = new int*[n]; //ìˆœì„œ
 	string **str_board = new string*[n]; //
 	for (int i = 0; i < n; i++) {
 		map<string, int> m;
 		cin >> len;
 		
-		for (int j = 0; j < len; j++) { //Á¦ 1 °ø°³Å°
+		for (int j = 0; j < len; j++) { //ì œ 1 ê³µê°œí‚¤
 			board[i] = new int[len];
 			str_board[i] = new string[len];
 			cin >> str;
 			m.insert(make_pair(str, j));
 		}
-		for (int j = 0; j < len; j++) { //Á¦ 2 °ø°³Å°
+		for (int j = 0; j < len; j++) { //ì œ 2 ê³µê°œí‚¤
 			cin >> str;
 			board[i][j] = m.find(str)->second;
 		}
-		for (int j = 0; j < len; j++) { //¾ÏÈ£¹®
+		for (int j = 0; j < len; j++) { //ì•”í˜¸ë¬¸
 			cin>>str_board[i][board[i][j]];
 		}
 	}
 	
-	iterator it;
 	for (int i = 0; i < n; i++) {
 
-		for (int j = 0; j < [i].size(); j++)
+		for (int j = 0; j < len; j++)
 			cout << str_board[i][j] << " ";
 
 		cout << endl;
